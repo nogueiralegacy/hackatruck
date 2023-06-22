@@ -11,9 +11,19 @@ struct terceiraTela: View {
     var imagemBackGround = Image("fotoCaminhao")
     
     @State private var showAlert = false
+    @State private var name: String = "Gabriel"
     var body: some View {
         
         VStack {
+            
+            HStack {
+                TextField("Coloque seu nome:", text: $name)
+            }
+            
+            HStack {
+                Text("Ola, \(name)")
+            }
+            
             ZStack {
                 imagemBackGround
                     .resizable()
@@ -21,7 +31,21 @@ struct terceiraTela: View {
                     .offset(x: 75, y: 0)
                     .opacity(0.2)
                     .zIndex(0)
+                
+                
+                Image("logoHackatruck")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200)
+                
+                
+                Image("caminhaoSemFundo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200)
+                    .offset(x: 0, y: -70)
             }
+            
             HStack {
                 Button("Entrar") {
                     showAlert = true
