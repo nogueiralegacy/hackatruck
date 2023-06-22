@@ -14,20 +14,12 @@ struct ContentView: View {
     @State private var cor: Color = Color(.purple)
     @State private var estadoImc: String = ""
     
-    func verificaDouble(valor: String) -> Bool {
-        if Double(valor) != nil {
-            return true
+    func calculaIMC(peso: Double, altura: Double) -> Double?{
+        if altura != 0  && peso != 0{
+            return peso / (altura * altura)
         }
         
-        return false
-    }
-    
-    func converteDouble(stringDouble: String) -> Double {
-        return Double(stringDouble)!
-    }
-    
-    func calculaIMC(peso: Double, altura: Double) -> Double {
-        return peso / (altura * altura)
+        return nil
     }
     
     
@@ -84,15 +76,20 @@ struct ContentView: View {
             
             
             Button("Calcular") {
-                var peso: Double = 0
-                var altura: Double = 0
-                if (verificaDouble(valor: inputPeso) && verificaDouble(valor: inputAltura)) {
-                    peso = converteDouble(stringDouble: inputPeso)
-                    altura = converteDouble(stringDouble: inputAltura)
+                let peso = Double(inputPeso) ?? 0.0
+                let altura = Double(inputAltura) ?? 0.0
+                
+                let imc = calculaIMC(peso: peso, altura: altura)
+                if (imc == nil || peso < 0 ||  altura < 0) {
+                   cor = Color(.red)
+                   estadoImc = "Valores inválidos"
+               }
+                else   {
+                    cor = corAdqueada(imc: imc!)
+                    estadoImc = estadoImc(imc: imc!)
                 }
-                var imc = calculaIMC(peso: peso, altura: altura)
-                cor = corAdqueada(imc: imc)
-                estadoImc = estadoImc(imc: imc)
+                 
+                
             } .frame(width: 120, height: 50)
                 .foregroundColor(.white)
                 .background(Color.blue)
