@@ -22,21 +22,6 @@ struct ContentView: View {
         return nil
     }
     
-    
-    func corAdqueada(imc: Double) -> Color {
-        if (imc < 18.5) {
-            return Color("baixoPeso")
-        }
-        if (imc < 25) {
-            return Color("normal")
-        }
-        if (imc < 30) {
-            return Color("sobrePeso")
-        }
-        
-        return Color("obesidade")
-    }
-    
     func estadoImc(imc: Double) -> String {
         if (imc < 18.5) {
             return ("baixoPeso")
@@ -49,6 +34,10 @@ struct ContentView: View {
         }
         
         return ("obesidade")
+    }
+    
+    func corAdqueada(estadoImc: String) -> Color {
+        return Color(estadoImc)
     }
     
     var body: some View {
@@ -85,8 +74,8 @@ struct ContentView: View {
                    estadoImc = "Valores inválidos"
                }
                 else   {
-                    cor = corAdqueada(imc: imc!)
                     estadoImc = estadoImc(imc: imc!)
+                    cor = corAdqueada(estadoImc: estadoImc)
                 }
                  
                 
