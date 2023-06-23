@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HelloHackatruck: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Hello, Hackatruck")
+                .frame(width: 200, height: 200)
+                .background(Color(.blue))
+        }
     }
 }
 
