@@ -12,6 +12,10 @@
 		F287F0DE2A460F6C00546E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F287F0DD2A460F6C00546E5E /* Assets.xcassets */; };
 		F287F0E12A460F6C00546E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F287F0E02A460F6C00546E5E /* Preview Assets.xcassets */; };
 		F287F0E82A460FC900546E5E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287F0E72A460FC900546E5E /* Home.swift */; };
+		F287F0EA2A4612FA00546E5E /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287F0E92A4612FA00546E5E /* Scroll.swift */; };
+		F287F0EC2A46136B00546E5E /* HelloHackatruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287F0EB2A46136B00546E5E /* HelloHackatruck.swift */; };
+		F287F0EE2A46137D00546E5E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287F0ED2A46137D00546E5E /* Message.swift */; };
+		F287F0F02A46138800546E5E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287F0EF2A46138800546E5E /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		F287F0DD2A460F6C00546E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F287F0E02A460F6C00546E5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F287F0E72A460FC900546E5E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F287F0E92A4612FA00546E5E /* Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
+		F287F0EB2A46136B00546E5E /* HelloHackatruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloHackatruck.swift; sourceTree = "<group>"; };
+		F287F0ED2A46137D00546E5E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F287F0EF2A46138800546E5E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +63,11 @@
 			children = (
 				F287F0E72A460FC900546E5E /* Home.swift */,
 				F287F0D92A460F6A00546E5E /* terceiroProjetoApp.swift */,
+				F287F0E92A4612FA00546E5E /* Scroll.swift */,
+				F287F0EB2A46136B00546E5E /* HelloHackatruck.swift */,
+				F287F0EF2A46138800546E5E /* Profile.swift */,
 				F287F0DB2A460F6A00546E5E /* ContentView.swift */,
+				F287F0ED2A46137D00546E5E /* Message.swift */,
 				F287F0DD2A460F6C00546E5E /* Assets.xcassets */,
 				F287F0DF2A460F6C00546E5E /* Preview Content */,
 			);
@@ -142,6 +154,10 @@
 			files = (
 				F287F0DC2A460F6A00546E5E /* ContentView.swift in Sources */,
 				F287F0E82A460FC900546E5E /* Home.swift in Sources */,
+				F287F0EA2A4612FA00546E5E /* Scroll.swift in Sources */,
+				F287F0F02A46138800546E5E /* Profile.swift in Sources */,
+				F287F0EE2A46137D00546E5E /* Message.swift in Sources */,
+				F287F0EC2A46136B00546E5E /* HelloHackatruck.swift in Sources */,
 				F287F0DA2A460F6A00546E5E /* terceiroProjetoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
