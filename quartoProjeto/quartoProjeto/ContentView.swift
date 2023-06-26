@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showSheet = false
     var body: some View {
         NavigationView {
             VStack {
@@ -17,8 +18,12 @@ struct ContentView: View {
                 NavigationLink(destination: SegundaTela()) {
                     Text("Segunda Tela")
                 }
-                NavigationLink(destination: TerceiraTela()) {
-                    Text("Terceira Tela")
+            
+                Button ("TerceiraTela") {
+                    showSheet = true
+                }
+                .sheet(isPresented: $showSheet) {
+                    TerceiraTela()
                 }
             }
         }
