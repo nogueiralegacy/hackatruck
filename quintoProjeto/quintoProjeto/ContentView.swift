@@ -49,7 +49,7 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                 
                     ForEach(musicas) { musica in
-                        HStack {
+                        HStack{
                             AsyncImage(url: musica.capa) {image in
                                 image
                                     .resizable()
@@ -72,7 +72,7 @@ struct ContentView: View {
                             }
                             .foregroundColor(.white)
                             
-                            
+                            Spacer()
                             Image(systemName: "ellipsis")
                                 .colorInvert()
                                 .alignmentGuide(HorizontalAlignment.trailing) { d in
@@ -82,7 +82,7 @@ struct ContentView: View {
     
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .offset(x: -90)
+                .padding()
             }
             .padding(.top, 30)
         }
