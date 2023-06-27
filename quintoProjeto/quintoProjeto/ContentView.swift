@@ -46,16 +46,21 @@ struct ContentView: View {
     
     
     var body: some View {
+        NavigationView {
             VStack {
                 ScrollView {
-                        AsyncImage(url: URL(string: "https://www.jornaldorap.com.br/wp-content/uploads/2020/04/naldo_benny_live.jpg")) {image in
-                            image
-                                .resizable()
-                                .frame(width: 220, height: 220)
-                        }
-                    placeholder: {
-                        ProgressView()
+                    AsyncImage(url: URL(string: "https://www.jornaldorap.com.br/wp-content/uploads/2020/04/naldo_benny_live.jpg")) {image in
+                        image
+                            
+                            .resizable()
+                            .frame(width: 220, height: 220)
+                            .cornerRadius(8)
+                            .padding(.top, 20)
+                            
                     }
+                placeholder: {
+                    ProgressView()
+                }
                     VStack(alignment: .leading) {
                         Text("This is Naldo")
                             .font(.title)
@@ -74,39 +79,41 @@ struct ContentView: View {
                     Spacer()
                     ScrollView {
                         VStack(alignment: .leading) {
-
+                            
                             ForEach(musicas) { musica in
-                                HStack{
-                                    AsyncImage(url: musica.capa) {image in
-                                        image
-                                            .resizable()
-                                            .frame(width: 50, height: 50)
+                                NavigationLink(destination: TelaPlay(musica: musica)) {
+                                    HStack{
+                                        AsyncImage(url: musica.capa) {image in
+                                            image
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                    placeholder: {
+                                        ProgressView()
                                     }
-                                placeholder: {
-                                    ProgressView()
-                                }
-                                    VStack(alignment: .leading) {
-                                        Text(musica.nome)
-                                            .font(.subheadline)
-                                        HStack {
-                                            ForEach(musica.artista, id: \.self) {
-                                                artista in Text(artista)
-                                                    .font(.caption)
+                                        VStack(alignment: .leading) {
+                                            Text(musica.nome)
+                                                .font(.subheadline)
+                                            HStack {
+                                                ForEach(musica.artista, id: \.self) {
+                                                    artista in Text(artista)
+                                                        .font(.caption)
+                                                }
                                             }
                                         }
+                                        .foregroundColor(.white)
+                                        
+                                        Spacer()
+                                        Image(systemName: "ellipsis")
+                                            .foregroundColor(.white)
                                     }
-                                    .foregroundColor(.white)
-                                    
-                                    Spacer()
-                                    Image(systemName: "ellipsis")
-                                        .colorInvert()
                                 }
                             }
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .padding()
                     }
-                    .padding(.top, 15)
+                    .padding(.top, 10)
                     
                     Spacer()
                     Text("Sugeridos")
@@ -116,9 +123,9 @@ struct ContentView: View {
                         .offset(x: -90)
                     
                     ScrollView(.horizontal) {
-                            HStack {
-                                ForEach (musicas) { musica in
-                                    VStack {
+                        HStack {
+                            ForEach (musicas) { musica in
+                                VStack {
                                     AsyncImage(url: musica.capa) { imagem in
                                         imagem
                                             .resizable()
@@ -128,18 +135,21 @@ struct ContentView: View {
                                 placeholder: {
                                     ProgressView()
                                 }
-                                    Text("Nome daniel adsdjasjdjas dasdasd ")
+                                    Text(musica.nome)
                                         .foregroundColor(.white)
+                                        .font(.subheadline)
                                 }
-                                }
+                                .padding(.horizontal, 8)
                             }
+                        }
                     }
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
-                LinearGradient(gradient: Gradient(colors: [.black, .blue]), startPoint: .bottom, endPoint: .top)
+                LinearGradient(gradient: Gradient(colors: [.black, .green]), startPoint: .bottom, endPoint: .top)
             )
+        }
           }
 }
 

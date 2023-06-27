@@ -12,6 +12,7 @@
 		F287F1282A49FEF900546E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F287F1272A49FEF900546E5E /* Assets.xcassets */; };
 		F287F12B2A49FEF900546E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F287F12A2A49FEF900546E5E /* Preview Assets.xcassets */; };
 		F287F1342A4A0D2700546E5E /* Musica.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287F1332A4A0D2700546E5E /* Musica.swift */; };
+		F287F1362A4B565C00546E5E /* TelaPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F287F1352A4B565C00546E5E /* TelaPlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		F287F1272A49FEF900546E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F287F12A2A49FEF900546E5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F287F1332A4A0D2700546E5E /* Musica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musica.swift; sourceTree = "<group>"; };
+		F287F1352A4B565C00546E5E /* TelaPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaPlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				F287F1232A49FEF800546E5E /* quintoProjetoApp.swift */,
+				F287F1352A4B565C00546E5E /* TelaPlay.swift */,
 				F287F1252A49FEF800546E5E /* ContentView.swift */,
 				F287F1332A4A0D2700546E5E /* Musica.swift */,
 				F287F1272A49FEF900546E5E /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F287F1262A49FEF800546E5E /* ContentView.swift in Sources */,
+				F287F1362A4B565C00546E5E /* TelaPlay.swift in Sources */,
 				F287F1242A49FEF800546E5E /* quintoProjetoApp.swift in Sources */,
 				F287F1342A4A0D2700546E5E /* Musica.swift in Sources */,
 			);
