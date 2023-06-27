@@ -46,77 +46,100 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack {
-            HStack {
-                Image("caminhao")
-                    .resizable()
-            }
-            .frame(width: 200, height: 200)
-            .padding(.top, 50)
-            
-            VStack(alignment: .leading) {
-                Text("HacktruckFM")
-                    .font(.title)
-                    .bold()
-                    
-                HStack {
-                    Image("caminhao")
-                        .resizable()
-                        .frame(width: 28, height: 28)
-                    Text("Daniel Nogueira")
-                        .font(.subheadline)
-                }
-            }
-            .foregroundColor(.white)
-            .padding(.top, 20)
-            .offset(x: -90)
-            Spacer()
-            
-            ScrollView {
-                VStack(alignment: .leading) {
-                
-                    ForEach(musicas) { musica in
-                        HStack{
-                            AsyncImage(url: musica.capa) {image in
-                                image
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                            }
-                        placeholder: {
-                            ProgressView()
+            VStack {
+                ScrollView {
+                        AsyncImage(url: URL(string: "https://www.jornaldorap.com.br/wp-content/uploads/2020/04/naldo_benny_live.jpg")) {image in
+                            image
+                                .resizable()
+                                .frame(width: 220, height: 220)
                         }
-                            VStack(alignment: .leading) {
-                                Text(musica.nome)
-                                    .font(.subheadline)
-                                
-                                HStack {
-                                    ForEach(musica.artista, id: \.self) {
-                                        artista in Text(artista)
-                                            .font(.caption)
-                                        
-                                    }
-                                }
-                            }
-                            .foregroundColor(.white)
-                            
-                            Spacer()
-                            Image(systemName: "ellipsis")
-                                .colorInvert()
-                                .alignmentGuide(HorizontalAlignment.trailing) { d in
-                                    d.width}
+                    placeholder: {
+                        ProgressView()
+                    }
+                    VStack(alignment: .leading) {
+                        Text("This is Naldo")
+                            .font(.title)
+                            .bold()
+                        HStack {
+                            Image("caminhao")
+                                .resizable()
+                                .frame(width: 28, height: 28)
+                            Text("Daniel Nogueira")
+                                .font(.caption)
                         }
                     }
-    
+                    .foregroundColor(.white)
+                    .padding(.top, 20)
+                    .offset(x: -90)
+                    Spacer()
+                    ScrollView {
+                        VStack(alignment: .leading) {
+
+                            ForEach(musicas) { musica in
+                                HStack{
+                                    AsyncImage(url: musica.capa) {image in
+                                        image
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                placeholder: {
+                                    ProgressView()
+                                }
+                                    VStack(alignment: .leading) {
+                                        Text(musica.nome)
+                                            .font(.subheadline)
+                                        HStack {
+                                            ForEach(musica.artista, id: \.self) {
+                                                artista in Text(artista)
+                                                    .font(.caption)
+                                            }
+                                        }
+                                    }
+                                    .foregroundColor(.white)
+                                    
+                                    Spacer()
+                                    Image(systemName: "ellipsis")
+                                        .colorInvert()
+                                }
+                            }
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .padding()
+                    }
+                    .padding(.top, 15)
+                    
+                    Spacer()
+                    Text("Sugeridos")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(.white)
+                        .offset(x: -90)
+                    
+                    ScrollView(.horizontal) {
+                            HStack {
+                                ForEach (musicas) { musica in
+                                    VStack {
+                                    AsyncImage(url: musica.capa) { imagem in
+                                        imagem
+                                            .resizable()
+                                            .frame(width: 150, height: 150)
+                                            .cornerRadius(8)
+                                    }
+                                placeholder: {
+                                    ProgressView()
+                                }
+                                    Text("Nome daniel adsdjasjdjas dasdasd ")
+                                        .foregroundColor(.white)
+                                }
+                                }
+                            }
+                    }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .padding()
             }
-            .padding(.top, 30)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            LinearGradient(gradient: Gradient(colors: [.black, .blue]), startPoint: .bottom, endPoint: .top)
-        )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(
+                LinearGradient(gradient: Gradient(colors: [.black, .blue]), startPoint: .bottom, endPoint: .top)
+            )
           }
 }
 
